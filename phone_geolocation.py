@@ -4,6 +4,7 @@ import phonenumbers
 from phonenumbers import geocoder, carrier, timezone
 from geopy.geocoders import Photon
 
+
 def obtener_info_telefono(numero_telefono):
     """
     Obtener datos de geolocalización de un número de telefono.
@@ -19,8 +20,8 @@ def obtener_info_telefono(numero_telefono):
     zona_horaria = timezone.time_zones_for_number(numero)
 
     # Obtener el pais / región
-
-    pais = geocoder.description_for_number(numero, "es") # Proporcionar el idioma que creemos que esta asociado a ese número.
+    sufijo = input("Dime el país donde creas que pertenece el sufijo: ")
+    pais = geocoder.description_for_number(numero, sufijo) # Proporcionar el idioma que creemos que esta asociado a ese número.
 
     # Obtener el operador asociado con el número
 
@@ -53,7 +54,8 @@ def pintar_mapa(localizacion, filename="phone_map.html"):
     mapa.save(filename)
     print(f"Mapa guardado en: {filename}")
 
-# Inicio del programa    
+# Main
+  
 if __name__ == "__main__":
-    example = obtener_info_telefono("Numero random")
-    pintar_mapa(example["Pais"])
+    phone = obtener_info_telefono("PHONE_NUMBER")
+    pintar_mapa(phone["Pais"])
