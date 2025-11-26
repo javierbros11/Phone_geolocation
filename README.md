@@ -48,7 +48,7 @@ Mapa guardado en: phone_map.html
 
 Así se vería el mapa si por ejemplo abrimos en el navegador el fichero .html obtenido tras lanzar el script.
 
-![App Screenshot](C:\Users\javie\Desktop\snakeStart.png)
+![App Screenshot](screenshots/map_example.png)
 
 
 
