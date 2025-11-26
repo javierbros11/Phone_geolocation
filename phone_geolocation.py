@@ -57,5 +57,11 @@ def pintar_mapa(localizacion, filename="phone_map.html"):
 # Main
   
 if __name__ == "__main__":
-    phone = obtener_info_telefono("PHONE_NUMBER")
+    phone = obtener_info_telefono("+32467855351")
+
+# Mostrar los resultados por pantalla
+
+    for key,value in phone.items():
+        print(f"{key} : {value}")
+
     pintar_mapa(phone["Pais"])
